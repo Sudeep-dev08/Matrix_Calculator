@@ -134,15 +134,20 @@ int line()
 // Addition
 int add()
 {
-    int a[50][50], b[50][50], r1,c1;
-    printf("Enter no of rows: ");
+    int r1, c1, r2, c2;
+    printf("Enter no of rows of first matrix: ");
     scanf("%d", &r1);
-    printf("Enter no of columns: ");
+    printf("Enter no of columns of first matrix: ");
     scanf("%d", &c1);
-    if(r1!=c1){
-        printf("The no of rows and columns should be equal. Try again.\n");
+    printf("Enter no of rows of 2nd matrix: ");
+    scanf("%d", &r2);
+    printf("Enter no of columns of 2nd matrix: ");
+    scanf("%d", &c2);
+    if (r1 != r2 || c1 != c2){
+        printf("Matrix cannot be added as the no of rows and columns of 1st matrix and 2nd matrix are not equal. Try Again.\n");
         return 0;
     }
+    int a[r1][c1], b[r2][c2];
     printf("Enter Elements of 1st matrix: \n");
     for(int i = 0; i < r1; i++){
         for(int j = 0; j < c1; j++){
@@ -167,15 +172,20 @@ int add()
 // Subtraction
 int sub()
 {
-    int a[50][50], b[50][50], r1,c1;
-    printf("Enter no of rows: ");
+    int r1, c1, r2, c2;
+    printf("Enter no of rows of first matrix: ");
     scanf("%d", &r1);
-    printf("Enter no of columns: ");
+    printf("Enter no of columns of first matrix: ");
     scanf("%d", &c1);
-    if(r1!=c1){
-        printf("The no of rows and columns should be equal. Try again.\n");
+    printf("Enter no of rows of 2nd matrix: ");
+    scanf("%d", &r2);
+    printf("Enter no of columns of 2nd matrix: ");
+    scanf("%d", &c2);
+    if (r1 != r2 || c1 != c2){
+        printf("Matrix cannot be subracted as the no of rows and columns of 1st matrix and 2nd matrix are not equal. Try Again.\n");
         return 0;
     }
+    int a[r1][c1], b[r2][c2];
     printf("Enter Elements of 1st matrix: \n");
     for(int i = 0; i < r1; i++){
         for(int j = 0; j < c1; j++){
@@ -200,7 +210,7 @@ int sub()
 // Product
 int prod()
 {
-    int a[50][50], b[50][50], prod[50][50], r1, c1, r2, c2;
+    int r1, c1, r2, c2;
     printf("Enter no of rows of first matrix: ");
     scanf("%d", &r1);
     printf("Enter no of columns of first matrix: ");
@@ -213,6 +223,7 @@ int prod()
         printf("Matrix cannot be multiplied as the no of columns of 1st matrix and rows of 2nd matrix are not equal. Try Again.\n");
         return 0;
     }
+    int a[r1][c1], b[r2][c2];
     printf("Enter Elements of First Matrix.\n");
     for(int i = 0; i < r1; i++){
         for(int j = 0; j < c1; j++){
@@ -225,6 +236,7 @@ int prod()
             scanf("%d", &b[i][j]);
         }
     }
+    int prod[r1][c2];
     printf("\nProduct of Two matrices is: \n");
     for(int i = 0; i < r1; i++){
         for(int j = 0; j < c2; j++){
@@ -245,11 +257,12 @@ int prod()
 // Transpose
 int transpose()
 {
-    int a[50][50], r, c;
+    int r, c;
     printf("Enter no of rows: ");
     scanf("%d", &r);
     printf("Enter no of columns: ");
     scanf("%d", &c);
+    int a[r][c];
     printf("Enter elements of Matrix: \n");
     for(int i=0; i<r; i++){
         for(int j=0; j<c; j++){
@@ -298,7 +311,7 @@ int trace()
 // Square of a matrix
 int squared()
 {
-    int a[50][50], square[50][50], r1, c1;
+    int r1, c1;
     printf("Enter no of rows of matrix: ");
     scanf("%d", &r1);
     printf("Enter no of columns of matrix: ");
@@ -307,6 +320,7 @@ int squared()
         printf("The no of rows and columns should be equal. Try Again\n");
         return 0;
     }
+    int a[r1][c1], square[r1][c1];
     printf("Enter Elements of Matrix.\n");
     for(int i = 0; i < r1; i++){
         for(int j = 0; j < c1; j++){
@@ -334,7 +348,7 @@ int squared()
 // Cube of a Matrix
 int cubed()
 {
-    int a[50][50], square[50][50], cube[50][50], r1, c1;
+    int r1, c1;
     printf("Enter no of rows of matrix: ");
     scanf("%d", &r1);
     printf("Enter no of columns of matrix: ");
@@ -343,6 +357,7 @@ int cubed()
         printf("The no of rows and columns should be equal. Try again\n");
         return 0;
     }
+    int a[r1][c1], square[r1][c1], cube[r1][c1];
     printf("Enter Elements of Matrix.\n");
     for(int i = 0; i < r1; i++){
         for(int j = 0; j < c1; j++){
@@ -374,3 +389,5 @@ int cubed()
     }
 
 }
+
+// End of Program
